@@ -1,5 +1,13 @@
 <div id='container'>
 <!-- Your code here -->
+  <input ng-model="newLink">Link</input>
+  <button ng-click="sendNewLink()">Shorten Link</button>
+  <ul ng-model='links'>
+    <li ng-repeat='link in links track by $index'>
+      {{links | json}}
+    </li>
+    
+  </ul>
 
 </div>
 

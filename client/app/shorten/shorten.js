@@ -1,5 +1,10 @@
 angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links) {
-  // Your code here
+  $scope.links = [];
+  $scope.sendNewLink = function () {
+    Links.postLink($scope.newLink, function (resp) {
+      $scope.links.push(resp.body);
+    });
+  };
 });
