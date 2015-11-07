@@ -2,10 +2,19 @@
   <button ng-click='goToCreate()'>Go To Create</button>
   <input ng-model='fil'>
   <ul ng-model='Links'>
-    <li ng-repeat="link in (links | filter:fil) track by $index">
-      {{link}}
+    <!-- <li ng-repeat="link in (links | filter:fil) track by $index"> -->
+    <li ng-repeat="link in links">
+      <div class="link">
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a ng-click="linkRedirect()">{{link.base_url}}/{{link.code}}</a>
+      </div>
+      </div>
     </li>
   </ul>
+  <button> <a href="/">Logout</a></button>
 </div>
 <!-- var LinkSchema = new mongoose.Schema({
  visits: Number,
