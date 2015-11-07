@@ -1,8 +1,9 @@
 <div ng-controller='LinksController' id='container'>
   <button ng-click='goToCreate()'>Go To Create</button>
+  <input ng-model='fil'>
   <ul ng-model='Links'>
-    <li ng-repeat="link in links track by $index">
-      {{link | json}}
+    <li ng-repeat="link in (links | filter:fil) track by $index">
+      {{link}}
     </li>
   </ul>
 </div>

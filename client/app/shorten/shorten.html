@@ -7,8 +7,10 @@
     <li ng-repeat='link in links track by $index'>
       {{links | json}}
     </li>
-    
   </ul>
+  <h3 ng-show="(newLink.slice(0,7) !== 'http://')">
+    STOP BEING A FOOL (you forgot the http://)
+  </h3>
 
 </div>
 
