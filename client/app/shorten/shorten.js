@@ -4,7 +4,11 @@ angular.module('shortly.shorten', [])
   $scope.links = [];
   $scope.sendNewLink = function () {
     Links.postLink($scope.newLink, function (resp) {
-      $scope.links.push(resp.body);
+      $scope.links.push(resp.data);
+      $scope.newLink = '';
     });
+  };
+  $scope.goToIndex = function () {
+    $location.url('');
   };
 });

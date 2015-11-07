@@ -13,14 +13,17 @@ angular.module('shortly.services', [])
 
   var postLink = function (link, callback) {
     return $http({
-      method: 'Post',
+      method: 'POST',
       url: '/api/links',
-      data: link
+      data: JSON.stringify({url: link})
     })
     .then(callback, function (res) {
       console.log('ERROR:\n', res);
     });
   };
+
+  return {postLink: postLink,
+    getLinks: getLinks};
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

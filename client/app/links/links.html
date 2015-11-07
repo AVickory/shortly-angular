@@ -1,4 +1,5 @@
 <div ng-controller='LinksController' id='container'>
+  <button ng-click='goToCreate()'>Go To Create</button>
   <ul ng-model='Links'>
     <li ng-repeat="link in links track by $index">
       {{link | json}}
